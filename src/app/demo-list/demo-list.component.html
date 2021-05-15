@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>Number</th>
+    <th>Created At</th>
+    <th>Expire At</th>
+    <th>Amount</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let demo of demos">
+
+      <td>{{demo.name}}</td>
+      <td>{{demo.number}}</td>
+      <td>
+          <button (click)="delete(demo.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -65,7 +65,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fugapp:build"
+            "browserTarget": "fugapp:build",
+            "host": "0.0.0.0",
+            "port": 4850
           },
           "configurations": {
             "production": {
@@ -124,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "fugapp"
+  "defaultProject": "fugapp",
+  "cli": {
+    "analytics": "3c308843-f5b6-43ec-9607-3c223c481136"
+  }
 }
