@@ -1,0 +1,14 @@
+<p>nuevo works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+<formly-form [model]="model" [fields]="fields" [form]="form"></formly-form>
+
+<button type="reset" mat-raised-button>Clear</button>
+<button mat-raised-button color="primary">Submit</button>
+</form>
+
+
+<app-form-debug
+[form]="form.value" [model]="model"
+>
+
+</app-form-debug>

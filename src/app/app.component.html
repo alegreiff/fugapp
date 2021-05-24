@@ -1,2 +1,58 @@
-<demo-list></demo-list>
-<router-outlet></router-outlet>
+<!-- https://www.youtube.com/watch?v=u9cAb_4o8OM&list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&index=13
+https://www.youtube.com/watch?v=Q6qhzG7mObU -->
+<app-main-nav>
+  <section class="mainfuga">
+    <router-outlet></router-outlet>
+    <hr>
+    <demo-list></demo-list>
+  </section>
+</app-main-nav>
+<!-- Creates a layout with a left-positioned sidenav and explicit content. -->
+<!-- <mat-sidenav-container>
+  <mat-sidenav #sidenav [(opened)]="opened" mode="side" (opened)="log('Opened')" (closed)="log('Closed')">
+    <app-side-nav></app-side-nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button (click)="opened=!opened">Toggle</button>
+    <button (click)="sidenav.open()">OPEN</button>
+    <button (click)="sidenav.close()">CLOSE</button>
+    <button (click)="sidenav.toggle()">TOGGLE DIRECTO</button>
+    <mat-toolbar  color="primary">
+      <mat-toolbar-row class="toolbar">
+        <span> FugAPP </span>
+        <button mat-button>
+          <mat-icon>settings_applications</mat-icon>
+          FugAPP
+        </button>
+    <button routerLink="/listados">Listados</button>
+    <button routerLink="/orders">Orders</button>
+    <button routerLink="">Home</button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- <button mat-button [matMenuTriggerFor]="menu">Simple Menu</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Menu Item 1</button>
+  <button mat-menu-item>Menu Item 2</button>
+</mat-menu> -->
+
+<!-- <mat-toolbar  color="primary">
+  <mat-toolbar-row class="toolbar">
+    <span> FugAPP </span>
+    <button mat-button>
+      <mat-icon>settings_applications</mat-icon>
+      FugAPP
+    </button>
+<button routerLink="/listados">Listados</button>
+<button routerLink="/orders">Orders</button>
+<button routerLink="">Home</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+ -->
+
+<!-- <demo-list></demo-list> -->
+
