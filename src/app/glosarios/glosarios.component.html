@@ -1,4 +1,24 @@
-<p>Lista de términos</p>
+<h4>La cassa</h4>
+<mat-divider></mat-divider>
+<hr>
+<div
+      fxLayout="row wrap"
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="20px"
+      >
+  <div
+        fxFlex="20"
+        fxFlex.lg="15"
+        fxFlex.sm="30"
+
+        *ngFor="let glos of glosario">
+        <app-glosario [glosario]="glos" ></app-glosario>
+  </div>
+
+</div>
+
+<!-- <p>Lista de términos</p>
 
 <pre>
   {{ glosario | json}}
@@ -13,3 +33,4 @@ Video BIG DATA https://www.youtube.com/watch?v=M26iIqmqWkI
 https://egghead.io/lessons/angular-customize-the-form-control-s-input-type-with-angular-formly
 <hr>
 <router-outlet></router-outlet>
+ -->

@@ -1,12 +1,117 @@
-<!-- https://www.youtube.com/watch?v=u9cAb_4o8OM&list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&index=13
-https://www.youtube.com/watch?v=Q6qhzG7mObU -->
-<app-main-nav>
+<!-- <div style="height: 80vh;">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Responsive Navigation</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md> -->
+<!-- The following menu items will be hidden on both SM and XS screen sizes -->
+<!--         <a href="#" mat-button>Menu Item 1</a>
+        <a href="#" mat-button>Menu Item 2</a>
+        <a href="#" mat-button>Menu Item 3</a>
+        <a href="#" mat-button>Menu Item 4</a>
+        <a href="#" mat-button>Menu Item 5</a>
+        <a href="#" mat-button>Menu Item 6</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" mat-list-item>Close</a>
+        <a href="#" mat-list-item>Menu Item 1</a>
+        <a href="#" mat-list-item>Menu Item 2</a>
+        <a href="#" mat-list-item>Menu Item 3</a>
+        <a href="#" mat-list-item>Menu Item 4</a>
+        <a href="#" mat-list-item>Menu Item 5</a>
+        <a href="#" mat-list-item>Menu Item 6</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
+  </mat-sidenav-container>
+</div> -->
+
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #miSidenav mode="push">
+
+    <mat-toolbar>
+      <span>Menú</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="miSidenav.toggle()">
+        <mat-icon> menu </mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" (click)="miSidenav.toggle()">
+        <mat-icon mat-list-icon>label</mat-icon>
+        <span>Inicio</span>
+      </a>
+      <a mat-list-item routerLink="/glosario" (click)="miSidenav.toggle()">
+        <mat-icon mat-list-icon>label</mat-icon>
+        <span>Glosario</span>
+      </a>
+      <a mat-list-item [matMenuTriggerFor]="menu">
+        <mat-icon mat-list-icon>label</mat-icon>
+        <span>Glosario</span>
+      </a>
+
+
+      <a mat-list-item routerLink="/glosario/add" (click)="miSidenav.toggle()">
+        <mat-icon mat-list-icon>label</mat-icon>
+        <span>Glosario - Nuevo término</span>
+      </a>
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+        <button mat-menu-item routerLink="/glosario/add" (click)="miSidenav.toggle()">
+          <span>Glosario - Nuevo término</span>
+        </button>
+
+      </mat-menu>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-toolbar color="primary">
+    <button fxShow="true" fxHide.gt-sm mat-icon-button (click)="miSidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span fxShow="true" fxHide.lt-md class="superior_menu">
+      <button mat-mini-fab color="primary" routerLink="/">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <button mat-button routerLink="/glosario"> Glosario </button>
+
+
+
+    </span>
+    <span class="spacer"></span>
+    <button mat-raised-button> Salir </button>
+  </mat-toolbar>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
+
+<!-- <app-main-nav>
   <section class="mainfuga">
     <router-outlet></router-outlet>
     <hr>
     <demo-list></demo-list>
   </section>
-</app-main-nav>
+</app-main-nav> -->
+
+<!-- https://www.youtube.com/watch?v=u9cAb_4o8OM&list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&index=13
+https://www.youtube.com/watch?v=Q6qhzG7mObU -->
+
+
+
+
 <!-- Creates a layout with a left-positioned sidenav and explicit content. -->
 <!-- <mat-sidenav-container>
   <mat-sidenav #sidenav [(opened)]="opened" mode="side" (opened)="log('Opened')" (closed)="log('Closed')">
@@ -55,4 +160,3 @@ https://www.youtube.com/watch?v=Q6qhzG7mObU -->
  -->
 
 <!-- <demo-list></demo-list> -->
-

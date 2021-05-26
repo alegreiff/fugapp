@@ -20,6 +20,7 @@ export class GlosariosComponent implements OnInit {
 
   ngOnInit(): void {
     this.glosarioSRV.cargaTerminos();
+
     this.storeSub = this.estado.stateChanged.subscribe((state) => {
       if (state) {
         this.glosario = state.terminos;

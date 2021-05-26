@@ -1,6 +1,7 @@
 export interface StoreState {
   usuario: Usuario;
   terminos: Glosario[];
+  fuentes: Fuente[];
 }
 export interface Usuario {
   uid: string;
@@ -17,10 +18,17 @@ export interface Usuario {
   nombrereal?: string;
 }
 
+export interface Fuente {
+  uid?: string;
+  descripcion: string;
+  vinculo: string;
+}
+
 export interface Glosario {
   id?: string;
   termino: string;
   descripcion?: string;
+  fuentes?: Fuente[];
 }
 
 export enum AccionesStore {
@@ -33,4 +41,5 @@ export enum AccionesStore {
   GetCustomers = 'GET_CUSTOMERS',
   SortCustomers = 'SORT_CUSTOMERS',
   CargaTerminos = 'CARGA_TERMINOS',
+  CargaFuentes = 'CARGA_FUENTES',
 }

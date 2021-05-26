@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -34,8 +36,18 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
     AngularFireAuthModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormlyModule.forRoot({ extras: { lazyRender: true } }),
+    FormlyModule.forRoot({
+      extras: { lazyRender: true },
+      validationMessages: [
+        {
+          name: 'required',
+          message: 'Llamen a moe',
+        },
+      ],
+    }),
     FormlyMaterialModule,
+    NgSelectModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'fugapp';
+  /* title = 'fugapp';
   opened = false;
 
   log(state) {
     console.log(state);
-  }
+  } */
 }

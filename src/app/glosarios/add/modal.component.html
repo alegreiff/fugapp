@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Nombre de la ventana</h2>
+<mat-dialog-content>
+   <!-- Lorem ipsum dolor saepe, nisi tenetur!
+   <pre> {{ data.fuentes |  json }} </pre> -->
+
+<table mat-table #table [dataSource]="data.fuentes">
+  <ng-container matColumnDef="descripcion">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let row"> {{row.descripcion}} </td>
+  </ng-container>
+  <ng-container matColumnDef="vinculo">
+    <th mat-header-cell *matHeaderCellDef> Link </th>
+    <td mat-cell *matCellDef="let row"> {{row.vinculo}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+</table>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close mat-dialog-close="true">Sigo</button>
+  <button mat-button mat-dialog-close mat-dialog-close="false">Cierro</button>
+</mat-dialog-actions>

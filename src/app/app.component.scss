@@ -1,4 +1,14 @@
-.toolbar{
+.container {
+  margin: 25px;
+}
+.superior_menu button{
+  margin: 0.5em;
+}
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+/* .toolbar{
   display: flex;
   justify-content: space-between;
 }
@@ -17,3 +27,4 @@ mat-sidenav {
 .mainfuga{
   border: 10px lime solid;
 }
+ */
