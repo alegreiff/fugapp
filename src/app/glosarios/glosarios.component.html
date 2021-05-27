@@ -1,19 +1,9 @@
 <h4>La cassa</h4>
 <mat-divider></mat-divider>
 <hr>
-<div
-      fxLayout="row wrap"
-      fxLayout.xs="column"
-      fxLayoutAlign="center"
-      fxLayoutGap="20px"
-      >
-  <div
-        fxFlex="20"
-        fxFlex.lg="15"
-        fxFlex.sm="30"
-
-        *ngFor="let glos of glosario">
-        <app-glosario [glosario]="glos" ></app-glosario>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="20px">
+  <div fxFlex="20" fxFlex.lg="15" fxFlex.sm="30" *ngFor="let glos of glosario">
+    <app-glosario [glosario]="glos"></app-glosario>
   </div>
 
 </div>

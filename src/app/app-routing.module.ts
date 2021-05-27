@@ -21,6 +21,8 @@ const routes: Routes = [
     path: 'acceso',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
+  { path: 'proyectos', loadChildren: () => import('./proyectos/proyectos.module').then(m => m.ProyectosModule) },
+  { path: 'recursos', loadChildren: () => import('./recursos/recursos.module').then(m => m.RecursosModule) },
 ];
 
 @NgModule({

@@ -50,6 +50,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FlexLayoutModule,
   ],
   providers: [],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

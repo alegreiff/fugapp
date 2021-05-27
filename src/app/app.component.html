@@ -85,7 +85,32 @@
         <mat-icon>home</mat-icon>
       </button>
 
+      <span class="spacer"></span>
+
       <button mat-button routerLink="/glosario"> Glosario </button>
+      <!-- <button mat-button routerLink="/acceso"> Admin </button> -->
+      <button mat-button routerLink="/proyectos"> Proyectos </button>
+      <button mat-button routerLink="/recursos"> Recursos </button>
+
+      <ng-container *ngIf="usuario?.uid">
+
+
+        <button mat-icon-button [matMenuTriggerFor]="superiormenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #superiormenu="matMenu" xPosition="before">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+          <button mat-menu-item routerLink="/glosario/add">
+            <span>Glosario - Nuevo término</span>
+          </button>
+          <button mat-menu-item routerLink="/proyectos/add">
+            <span>Proyectos - nuevo proyecto</span>
+          </button>
+
+        </mat-menu>
+      </ng-container>
+
 
 
 
@@ -94,6 +119,10 @@
     <button mat-raised-button> Salir </button>
   </mat-toolbar>
   <div class="container">
+    <!-- <p style="background: rgb(240, 240, 180); height: 200px">
+      hola amigues
+      {{ usuario?.uid }}
+    </p> -->
     <router-outlet></router-outlet>
   </div>
 </mat-sidenav-container>

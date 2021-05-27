@@ -1,7 +1,14 @@
+export interface Proyecto {
+  id?: string;
+  nombre: string;
+  descripcion?: string;
+  fuentes?: Fuente[];
+}
 export interface StoreState {
   usuario: Usuario;
   terminos: Glosario[];
   fuentes: Fuente[];
+  proyectos: Proyecto[];
 }
 export interface Usuario {
   uid: string;

@@ -2,7 +2,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { dataCyExtension } from './../shared/formularios/data-cy.extension';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgSelectFormlyComponent } from './../shared/formularios/ng-select.type';
-import { DebugComponent } from './nuevo/debug-component';
 import { AppMaterialModule } from './../app-material/app-material.module';
 import { FormlyMaterialModule } from '@ngx-formly/material';
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
@@ -20,6 +19,7 @@ import {
 import { AddComponent } from './add/add.component';
 import { ModalComponent } from './add/modal.component';
 import { GlosarioComponent } from './shared/glosario.component';
+import { SharedModule } from '../shared/shared.module';
 
 export function minValidationMessage(err, field: FormlyFieldConfig) {
   return `Meta una edad adecuada mayor que ${err.min} usted puso ${err.actual}`;
@@ -39,7 +39,7 @@ export function ipValidator(control: FormControl): ValidationErrors {
   declarations: [
     GlosariosComponent,
     NuevoComponent,
-    DebugComponent,
+
     NgSelectFormlyComponent,
     AddComponent,
     ModalComponent,
@@ -47,6 +47,7 @@ export function ipValidator(control: FormControl): ValidationErrors {
   ],
 
   imports: [
+    SharedModule,
     FlexLayoutModule,
     CommonModule,
     GlosariosRoutingModule,

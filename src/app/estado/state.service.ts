@@ -7,6 +7,7 @@ import {
   Usuario,
   Glosario,
   Fuente,
+  Proyecto,
 } from './general.state';
 import * as _ from 'lodash';
 
@@ -15,7 +16,13 @@ import * as _ from 'lodash';
 })
 export class StateService extends ObservableStore<StoreState> {
   subs_glosario: Subscription;
-  initialState: StoreState = { usuario: null, terminos: [], fuentes: [] };
+  subs_proyecto: Subscription;
+  initialState: StoreState = {
+    usuario: null,
+    terminos: [],
+    fuentes: [],
+    proyectos: [],
+  };
   constructor() {
     super({ trackStateHistory: true, logStateChanges: true });
     this.setState(this.initialState, AccionesStore.EstadoInicial);
@@ -34,6 +41,19 @@ export class StateService extends ObservableStore<StoreState> {
       state.terminos = _.sortBy(res, ['termino']);
 
       this.setState({ terminos: state.terminos }, AccionesStore.CargaTerminos);
+    });
+  }
+
+  setProyecto(proyectos: Observable<Proyecto[]>) {
+    let state = this.getState();
+    this.subs_proyecto = proyectos.subscribe((res) => {
+      console.log('TERMINNES', res);
+      state.proyectos = _.sortBy(res, ['nombre']);
+
+      this.setState(
+        { proyectos: state.proyectos },
+        AccionesStore.AgregaProyectos
+      );
     });
   }
 

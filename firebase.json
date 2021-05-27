@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "/dist/fugapp",
+    "public": "./dist/fugapp",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -53,26 +53,28 @@ export class AuthService {
     //this.AuthLogin(provider);
 
     return from(
-      this.afAuth.setPersistence('session').then(() => {
-        return this.afAuth.signInWithPopup(provider).then((res) => {
-          let admin: boolean = false;
-          let editor: boolean = false;
+      this.afAuth
+        .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+        .then(() => {
+          return this.afAuth.signInWithPopup(provider).then((res) => {
+            let admin: boolean = false;
+            let editor: boolean = false;
 
-          const Usuario = {
-            uid: res.user.uid,
-            email: res.user.email,
-            displayName: res.user.displayName,
+            const Usuario = {
+              uid: res.user.uid,
+              email: res.user.email,
+              displayName: res.user.displayName,
 
-            photoURL: res.user.photoURL,
-            editor,
-            admin,
-          };
+              photoURL: res.user.photoURL,
+              editor,
+              admin,
+            };
 
-          console.log(Usuario);
-          this.estado.setUser(Usuario);
-          return Object(Usuario);
-        });
-      })
+            console.log(Usuario);
+            this.estado.setUser(Usuario);
+            return Object(Usuario);
+          });
+        })
     );
   }
 

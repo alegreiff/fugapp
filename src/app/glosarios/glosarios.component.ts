@@ -1,3 +1,4 @@
+import { ProyectoService } from './../proyectos/proyecto.service';
 import { StateService } from './../estado/state.service';
 import { GlosarioService } from './glosario.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,11 +16,13 @@ export class GlosariosComponent implements OnInit {
 
   constructor(
     private glosarioSRV: GlosarioService,
-    private estado: StateService
+    private estado: StateService,
+    private proyectoSRV: ProyectoService
   ) {}
 
   ngOnInit(): void {
     this.glosarioSRV.cargaTerminos();
+    this.proyectoSRV.cargaProyectos();
 
     this.storeSub = this.estado.stateChanged.subscribe((state) => {
       if (state) {
